@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        applicationId "at.wada811.storagereadwritechecker"
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        PreKitKat {
+            applicationId "at.wada811.storagereadwritechecker.prekitkat"
+            minSdkVersion 15
+        }
+        PreKitKatRead {
+            applicationId "at.wada811.storagereadwritechecker.prekitkat.read"
+            minSdkVersion 15
+        }
+        PreKitKatWrite {
+            applicationId "at.wada811.storagereadwritechecker.prekitkat.write"
+            minSdkVersion 15
+        }
+        PreKitKatReadWrite {
+            applicationId "at.wada811.storagereadwritechecker.prekitkat.readwrite"
+            minSdkVersion 15
+        }
+        KitKat {
+            applicationId "at.wada811.storagereadwritechecker.kitkat"
+            minSdkVersion 19
+        }
+        KitKatRead {
+            applicationId "at.wada811.storagereadwritechecker.kitkat.read"
+            minSdkVersion 19
+        }
+        KitKatWrite {
+            applicationId "at.wada811.storagereadwritechecker.kitkat.write"
+            minSdkVersion 19
+        }
+        KitKatReadWrite {
+            applicationId "at.wada811.storagereadwritechecker.kitkat.readwrite"
+            minSdkVersion 19
+        }
+        KitKatWriteCompat {
+            applicationId "at.wada811.storagereadwritechecker.kitkat.writecompat"
+            minSdkVersion 15
+        }
+        KitKatReadWriteCompat {
+            applicationId "at.wada811.storagereadwritechecker.kitkat.readwritecompat"
+            minSdkVersion 15
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:19.+'
+}
